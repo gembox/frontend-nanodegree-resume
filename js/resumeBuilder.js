@@ -126,18 +126,18 @@ $("#header").append(formattedPicture);
 $("#header").append(formattedWelcome);
 $("#mapDiv").append(googleMap);
 
-
-if (bio.skills.length !== 0) {
+bio.display = function() {
 	$("#header").append(HTMLskillsStart);
-	var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkills);
-	var formattedSkills = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(formattedSkills);
-	var formattedSkills = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkills);
-	var formattedSkills = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#skills").append(formattedSkills);
+
+	for (var skill in bio.skills) {
+		if (bio.skills.hasOwnProperty(skill)) {
+			var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
+			$("#skills").append(formattedSkills);
+		}
+	}
 };
+
+bio.display();
 
 work.display = function() {
 	for (var job in work.jobs) {
