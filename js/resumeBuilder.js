@@ -139,7 +139,7 @@ if (bio.skills.length !== 0) {
 	$("#skills").append(formattedSkills);
 };
 
-function displayWork() {
+work.display = function() {
 	for (var job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 
@@ -158,10 +158,7 @@ function displayWork() {
 	}
 };
 
-
-
-displayWork();
-
+work.display();
 
 projects.display = function() {
 	for (var item in project.projects) {
