@@ -126,6 +126,7 @@ $("#header").append(formattedPicture);
 $("#header").append(formattedWelcome);
 $("#mapDiv").append(googleMap);
 
+//add the skill to the header
 bio.display = function() {
 	$("#header").append(HTMLskillsStart);
 
@@ -139,6 +140,7 @@ bio.display = function() {
 
 bio.display();
 
+//show the work seciton of the resume
 work.display = function() {
 	for (var job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
@@ -160,6 +162,7 @@ work.display = function() {
 
 work.display();
 
+//show the project section of the resume
 projects.display = function() {
 	for (var item in project.projects) {
 		$("#projects").append(HTMLprojectStart);
@@ -179,6 +182,32 @@ projects.display = function() {
 };
 
 projects.display();
+
+//show the education section of the resume
+education.display = function() {
+	for (var school in education.schools) {
+		$("#education").append(HTMLschoolStart);
+
+		if (education.schools.hasOwnProperty(school)) {
+			var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+			$(".education-entry:last").append(formattedName);
+
+			var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].gradyear);
+			$(".education-entry:last").append(formattedDates);
+
+			var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+			$(".education-entry:last").append(formattedLocation);
+
+			var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+			$(".education-entry:last").append(formattedMajor);
+
+			var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+			$(".education-entry:last").append(formattedDegree);
+		}
+	}
+};
+
+education.display();
 
 //internationalize the name in the banner
 function inName() {
