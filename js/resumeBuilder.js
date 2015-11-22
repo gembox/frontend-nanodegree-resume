@@ -84,13 +84,13 @@ var project = {
     "title" : "Test Title",
     "dates" : "2015",
     "description" : "Some text here.",
-    "images" : ["https://lh3.googleusercontent.com/-sd8iEO5bxA4/VjS7TK4XNiI/AAAAAAAAAJU/NBqAoL_PRL0/w140-h140-p/MePic.PNGzoom=2&amp;resize=300%2C300"]
+    "images" : ["http://placehold.it/100x100"]
     },
     {
     "title" : "Test Title2",
     "dates" : "2015",
     "description" : "Some text here.2",
-    "images" : ["https://lh3.googleusercontent.com/-sd8iEO5bxA4/VjS7TK4XNiI/AAAAAAAAAJU/NBqAoL_PRL0/w140-h140-p/MePic.PNGzoom=2&amp;resize=300%2C300"]
+    "images" : ["http://placehold.it/100x100"]
     }
   ]
 };
@@ -177,6 +177,9 @@ projects.display = function() {
 
       var formattedDescription = HTMLprojectDescription.replace("%data%", project.projects[item].description);
       $(".project-entry:last").append(formattedDescription);
+
+      var formattedImage = HTMLprojectImage.replace("%data%", project.projects[item].images);
+      $(".project-entry:last").append(formattedImage);
     }
   }
 };
