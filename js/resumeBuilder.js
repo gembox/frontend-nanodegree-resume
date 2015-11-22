@@ -95,39 +95,38 @@ var project = {
 	]
 };
 
-//Use the formatting from helper.js
-var formattedName =HTMLheaderName.replace("%data%", bio.name);
 
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-
-var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
-
-var formattedEmail = HTMLemail.replace("%data%",bio.contact.email);
-
-var formattedGithub = HTMLgithub.replace("%data%",bio.contact.github);
-
-var formattedTwitter = HTMLtwitter.replace("%data%",bio.contact.twitter);
-
-var formattedLocation = HTMLlocation.replace("%data%",bio.contact.location);
-
-var formattedPicture = HTMLbioPic.replace("%data%", bio.picture);
-
-var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcome);
-
-//position based off index.html
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#topContacts").append(formattedMobile);
-$("#topContacts").append(formattedEmail);
-$("#topContacts").append(formattedGithub);
-$("#topContacts").append(formattedTwitter);
-$("#topContacts").append(formattedLocation);
-$("#header").append(formattedPicture);
-$("#header").append(formattedWelcome);
 $("#mapDiv").append(googleMap);
 
-//add the skill to the header
+//add the bio section to the top of the page
 bio.display = function() {
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
+
+	var formattedName =HTMLheaderName.replace("%data%", bio.name);
+	$("#header").prepend(formattedName);
+
+	var formattedPicture = HTMLbioPic.replace("%data%", bio.picture);
+	$("#header").append(formattedPicture);
+
+	var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcome);
+	$("#header").append(formattedWelcome);
+
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
+	$("#topContacts").append(formattedMobile);
+
+	var formattedEmail = HTMLemail.replace("%data%",bio.contact.email);
+	$("#topContacts").append(formattedEmail);
+
+	var formattedGithub = HTMLgithub.replace("%data%",bio.contact.github);
+	$("#topContacts").append(formattedGithub);
+
+	var formattedTwitter = HTMLtwitter.replace("%data%",bio.contact.twitter);
+	$("#topContacts").append(formattedTwitter);
+
+	var formattedLocation = HTMLlocation.replace("%data%",bio.contact.location);
+	$("#topContacts").append(formattedLocation);
+
 	$("#header").append(HTMLskillsStart);
 
 	for (var skill in bio.skills) {
