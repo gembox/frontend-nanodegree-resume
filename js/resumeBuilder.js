@@ -3,7 +3,7 @@ This is empty on purpose! Your code to build the resume will go here.
  */
 
 //JSON Objects
-
+//object to hold the bio information
 var bio = {
   "name" : "Ross Helenius",
    "role" : "Web Developer",
@@ -19,6 +19,7 @@ var bio = {
    "skills" : ["HTML","Javascript","SQL","Analytics"]
 };
 
+//object to hold the work information
 var work = {
   "jobs" : [
        {
@@ -59,6 +60,7 @@ var work = {
     ]
 };
 
+//object to hold the education information
 var education = {
   "schools" : [
     {
@@ -78,6 +80,7 @@ var education = {
   ]
 };
 
+//object to hodl the project information
 var project = {
   "projects" : [
     {
@@ -212,6 +215,7 @@ education.display = function() {
 
 education.display();
 
+//add in the google map
 $("#mapDiv").append(googleMap);
 
 //internationalize the name in the banner - not needed in final version
