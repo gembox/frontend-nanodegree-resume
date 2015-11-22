@@ -111,18 +111,23 @@ bio.display = function() {
 
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
 	$("#topContacts").append(formattedMobile);
+	$("#footerContacts").append(formattedMobile);
 
 	var formattedEmail = HTMLemail.replace("%data%",bio.contact.email);
 	$("#topContacts").append(formattedEmail);
+	$("#footerContacts").append(formattedEmail);
 
 	var formattedGithub = HTMLgithub.replace("%data%",bio.contact.github);
 	$("#topContacts").append(formattedGithub);
+	$("#footerContacts").append(formattedGithub);
 
 	var formattedTwitter = HTMLtwitter.replace("%data%",bio.contact.twitter);
 	$("#topContacts").append(formattedTwitter);
+	$("#footerContacts").append(formattedTwitter);
 
 	var formattedLocation = HTMLlocation.replace("%data%",bio.contact.location);
 	$("#topContacts").append(formattedLocation);
+	$("#footerContacts").append(formattedLocation);
 
 	$("#header").append(HTMLskillsStart);
 
