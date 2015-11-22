@@ -95,9 +95,6 @@ var project = {
 	]
 };
 
-
-$("#mapDiv").append(googleMap);
-
 //add the bio section to the top of the page
 bio.display = function() {
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -208,17 +205,19 @@ education.display = function() {
 
 education.display();
 
-//internationalize the name in the banner
-function inName() {
-	var name = window.name;
-	name = name.split(" ");
-	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-	name[1] = name[1].toUpperCase();
-	name = name[0] + " " + name[1];
-	console.log(name);
-	return name;
-};
+$("#mapDiv").append(googleMap);
 
-var name = $("#name").text();
+//internationalize the name in the banner - not needed in final version
+// function inName() {
+// 	var name = window.name;
+// 	name = name.split(" ");
+// 	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+// 	name[1] = name[1].toUpperCase();
+// 	name = name[0] + " " + name[1];
+// 	console.log(name);
+// 	return name;
+// };
 
-$("#main").append(internationalizeButton);
+// var name = $("#name").text();
+
+// $("#main").append(internationalizeButton);
